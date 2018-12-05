@@ -1,1 +1,7 @@
+.visually-hidden {
+  @include sr-only;
+}
 
+.main-header {
+  background-color: $blue;
+}
