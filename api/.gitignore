@@ -1,0 +1,8 @@
+# Composer dependencies
+vendor
+
+# Envionrment variables
+.env
+
+# IDE
+.idea

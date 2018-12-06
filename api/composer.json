@@ -1,0 +1,21 @@
+{
+    "name": "crosscut-festival-api",
+    "description": "Crosscut Festival website API.",
+    "type": "project",
+    "require": {
+        "ext-json": "*",
+        "php-http/guzzle6-adapter": "1.1.1",
+        "vlucas/phpdotenv": "2.5.1",
+        "xsolve-pl/salesforce-client": "1.0.2"
+    },
+    "autoload": {
+        "psr-4": {"CrosscutFestival\\": "src/"}
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher C. Wells",
+            "email": "chris@chrxs.net"
+        }
+    ]
+}
