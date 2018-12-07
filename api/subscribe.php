@@ -4,16 +4,20 @@ require __DIR__ . '/vendor/autoload.php';
 use CrosscutFestival\Salesforce\Client;
 use CrosscutFestival\Salesforce\Subscriber;
 use Dotenv\Dotenv;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
-header("Content-Type: application/json; charset=UTF-8");
+$request = Request::createFromGlobals();
 
-if (!isset($_POST['mail'])) {
-  die;
-}
-$mail = $_POST['mail'];
-
-if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-  die;
+$mail = $request->get('mail');
+if (empty($mail) || !filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+    $response = new JsonResponse(
+        ['error' => 'Invalid or empty email address.'],
+        Response::HTTP_BAD_REQUEST
+    );
+    $response->send();
+    die;
 }
 
 $dotenv = new Dotenv(__DIR__);
@@ -38,4 +42,6 @@ $client = new Client(
 
 $subscriber = new Subscriber($client, $mail);
 
-print json_encode(['mail' => $mail]);
+$response = new JsonResponse(['mail' => $mail]);
+$response->send();
+die;
