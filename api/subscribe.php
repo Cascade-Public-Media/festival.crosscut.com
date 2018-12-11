@@ -3,7 +3,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use CrosscutFestival\Salesforce\Client;
 use CrosscutFestival\Salesforce\Subscriber;
-use Dotenv\Dotenv;
+use Noodlehaus\Config;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -20,24 +20,15 @@ if (empty($mail) || !filter_var($mail, FILTER_VALIDATE_EMAIL)) {
     die;
 }
 
-$dotenv = new Dotenv(__DIR__);
-$dotenv->load();
-$dotenv->required([
-  'BASE_URI',
-  'CLIENT_ID',
-  'CLIENT_SECRET',
-  'USER_NAME',
-  'USER_PASSWORD',
-  'USER_TOKEN',
-])->notEmpty();
+$config = new Config('config.json');
 
 $client = new Client(
-  getenv('BASE_URI'),
-  getenv('CLIENT_ID'),
-  getenv('CLIENT_SECRET'),
-  getenv('USER_NAME'),
-  getenv('USER_PASSWORD'),
-  getenv('USER_TOKEN')
+  $config->get('client.base_uri'),
+  $config->get('client.id'),
+  $config->get('client.secret'),
+  $config->get('user.name'),
+  $config->get('user.password'),
+  $config->get('user.token')
 );
 
 $subscriber = new Subscriber($client, $mail);

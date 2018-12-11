@@ -1,0 +1,12 @@
+{
+    "client": {
+        "base_uri": "",
+        "id": "",
+        "secret": ""
+    },
+    "user": {
+        "name": "",
+        "password": "",
+        "token": ""
+    }
+}
