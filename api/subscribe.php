@@ -30,7 +30,12 @@ if (empty($mail) || !filter_var($mail, FILTER_VALIDATE_EMAIL)) {
 }
 
 $client = new Client($config);
-$subscriber = new Subscriber($client, $mail, $config);
-$subscriber->subscribe();
+try {
+  $subscriber = new Subscriber($client, $mail, $config);
+  $subscriber->subscribe();
+}
+catch (RuntimeException $e) {
+  $response->setError($e->getMessage())->send();
+}
 
 $response->setData(['mail' => $mail])->send();

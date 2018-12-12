@@ -6,6 +6,7 @@ use GuzzleHttp\Client as GuzzleClient;
 use Http\Adapter\Guzzle6\Client as GuzzleAdapterClient;
 use Xsolve\SalesforceClient\Client\SalesforceClient;
 use Xsolve\SalesforceClient\Generator\TokenGenerator;
+use Xsolve\SalesforceClient\Request\RequestInterface;
 use Xsolve\SalesforceClient\Security\Authentication\Authenticator;
 use Xsolve\SalesforceClient\Security\Authentication\Credentials;
 use Xsolve\SalesforceClient\Security\Authentication\Strategy\PasswordGrantRegenerateStrategy;
@@ -78,6 +79,20 @@ class Client extends SalesforceClient {
     );
 
     parent::__construct($client, $tokenGenerator, 'v44.0');
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function doRequest(RequestInterface $request): array {
+    $responseBody = parent::doRequest($request);
+
+    // Throw a generic exception if the Salesforce API returns an error.
+    if (isset($responseBody[0]) && isset($responseBody[0]['errorCode'])) {
+      throw new \RuntimeException('Salesforce API error encountered.');
+    }
+
+    return $responseBody;
   }
 
 }
