@@ -46,6 +46,7 @@ class Client extends SalesforceClient {
   public function __construct($base_uri, $client_id, $client_secret, $user_name, $user_password, $user_token) {
     $client = new GuzzleAdapterClient(new GuzzleClient([
       'base_uri' => $base_uri,
+      'http_errors' => FALSE,
     ]));
 
     $credentials = new Credentials(

@@ -31,7 +31,8 @@ $client = new Client(
   $config->get('user.token')
 );
 
-$subscriber = new Subscriber($client, $mail);
+$subscriber = new Subscriber($client, $mail, $config);
+$subscriber->subscribe();
 
 $response = new JsonResponse(['mail' => $mail]);
 $response->send();

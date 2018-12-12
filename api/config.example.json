@@ -1,9 +1,20 @@
 {
+    "account": {
+        "defaults": {}
+    },
     "client": {
         "base_uri": "",
         "id": "",
         "secret": ""
     },
+    "contact": {
+        "defaults": {},
+        "search": [
+            "Email"
+        ]
+    },
+    "list_field": "",
+    "timezone": "Etc/UTC",
     "user": {
         "name": "",
         "password": "",
