@@ -43,17 +43,26 @@ class Client extends SalesforceClient {
    */
   protected $user_token;
 
-  public function __construct($base_uri, $client_id, $client_secret, $user_name, $user_password, $user_token) {
+  /**
+   * Client constructor.
+   *
+   * @param \Noodlehaus\Config $config
+   *   API config manager.
+   */
+  public function __construct($config) {
     $client = new GuzzleAdapterClient(new GuzzleClient([
-      'base_uri' => $base_uri,
+      'base_uri' => $config->get('client.base_uri'),
       'http_errors' => FALSE,
     ]));
 
     $credentials = new Credentials(
-      $client_id,
-      $client_secret,
+      $config->get('client.id'),
+      $config->get('client.secret'),
       'password',
-      ['username' => $user_name, 'password' => $user_password.$user_token]
+      [
+        'username' => $config->get('user.name'),
+        'password' => $config->get('user.password').$config->get('user.token')
+      ]
     );
 
     $authenticator = new Authenticator(
