@@ -1,26 +1,23 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
+use CrosscutFestival\Response;
 use CrosscutFestival\Salesforce\Client;
 use CrosscutFestival\Salesforce\Subscriber;
 use Noodlehaus\Config;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 $request = Request::createFromGlobals();
+$response = new Response();
 
 $mail = $request->get('mail');
 if (empty($mail) || !filter_var($mail, FILTER_VALIDATE_EMAIL)) {
-    $response = new JsonResponse(
-        ['error' => 'Invalid or empty email address.'],
-        Response::HTTP_BAD_REQUEST
-    );
-    $response->send();
-    die;
+  $response->setError('Invalid or empty email address.')->send();
 }
 
 $config = new Config('config.json');
+
+// TODO: Confirm required config.
 
 $client = new Client(
   $config->get('client.base_uri'),
@@ -31,9 +28,9 @@ $client = new Client(
   $config->get('user.token')
 );
 
+// TODO: Handle exceptions/errors from Salesforce API.
+
 $subscriber = new Subscriber($client, $mail, $config);
 $subscriber->subscribe();
 
-$response = new JsonResponse(['mail' => $mail]);
-$response->send();
-die;
+$response->setData(['mail' => $mail])->send();
