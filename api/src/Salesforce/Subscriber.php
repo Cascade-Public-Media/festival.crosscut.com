@@ -6,6 +6,7 @@ use Xsolve\SalesforceClient\Enum\SObjectType;
 use Xsolve\SalesforceClient\QueryBuilder\Expr\ExpressionFactory;
 use Xsolve\SalesforceClient\QueryBuilder\QueryBuilder;
 use Xsolve\SalesforceClient\Request\Create;
+use Xsolve\SalesforceClient\Request\Update;
 
 class Subscriber {
 
@@ -46,9 +47,19 @@ class Subscriber {
     $this->config = $config;
   }
 
+  /**
+   * Subscribe an email address to the configured mailing list.
+   *
+   * This method will also create, if necessary, a Salesforce Account and
+   * associated Contact object for the email address.
+   */
   public function subscribe() {
     if ($contact_id = self::getOrCreateContact()) {
-      // TODO: Subscribe!
+      $this->client->doRequest(new Update(
+        SObjectType::CONTACT(),
+        $contact_id,
+        [$this->config->get('list_field') => TRUE]
+      ));
     }
   }
 
