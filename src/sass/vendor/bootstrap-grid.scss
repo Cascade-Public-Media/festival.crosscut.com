@@ -6,7 +6,7 @@
  */
 
 @at-root {
-  @-ms-viewport { width: device-width; } // stylelint-disable-line at-rule-no-vendor-prefix
+  @-ms-viewport { width: device-width; } // stylelint-disable-line at-rule-no-vendorStore-prefix
 }
 
 html {
@@ -20,12 +20,12 @@ html {
   box-sizing: inherit;
 }
 
-// @import "../../vendor/scss/bootstrap/functions";
-// @import "../../vendor/scss/bootstrap/variables";
+// @import "../../vendorStore/scss/bootstrap/functions";
+// @import "../../vendorStore/scss/bootstrap/variables";
 
-// @import "../../vendor/scss/bootstrap/mixins/breakpoints";
-// @import "../../vendor/scss/bootstrap/mixins/grid-framework";
-// @import "../../vendor/scss/bootstrap/mixins/grid";
+// @import "../../vendorStore/scss/bootstrap/mixins/breakpoints";
+// @import "../../vendorStore/scss/bootstrap/mixins/grid-framework";
+// @import "../../vendorStore/scss/bootstrap/mixins/grid";
 
 @import "../../vendor/scss/bootstrap/grid";
 @import "../../vendor/scss/bootstrap/utilities/display";

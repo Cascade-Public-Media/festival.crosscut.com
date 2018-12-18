@@ -14,16 +14,19 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-crass": "^0.2.2",
     "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
     "node-sass": "^4.10.0"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
+    "owl.carousel": "^2.3.4",
     "popper.js": "^1.14.5"
   }
 }
