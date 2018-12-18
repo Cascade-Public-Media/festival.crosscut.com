@@ -71,21 +71,69 @@
     </script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="dist/css/style.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
   <header class="main-header">
       <nav>
-          <div class="logo"><a href="/" title="Home"><img src="dist/images/speech_bubbles.png" alt="Crosscut Festival 2019" height="40" width="40"/></a></div>
+              <div class="nav nav__primary">
+                  <div class="logo"><a href="/" title="Home"><img src="images/speech_bubbles.png" alt="Crosscut Festival 2019" height="40" width="40"/></a></div>
+                  <ul>
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#programs">Program</a></li>
+                      <li><a href="#tickets">Tickets</a></li>
+                      <li><a href="#location">Location</a></li>
+                      <li><a href="#extras">Extras</a></li>
+                  </ul>
+                  <ul>
+                      <li><a href="#">Sponsor</a></li>
+                      <li><a href="#">Volunteer</a></li>
+                      <li><a href="#">News</a></li>
+                      <li><a href="#">FAQ</a></li>
+                  </ul>
+              </div>
+          </div>
       </nav>
   </header>
   <main>
-      <section class="container-fluid hero">
+      <section class="container-fluid parallax hero">
+          <div class="container">
+              <div class="hero-contents">
+                  <img src="images/ccfest_logo_2019.png" alt="Crosscut Festival 2019" width="500" height="500"/>
+                  <span>Big Issues. Bold Ideas.</span><br/>
+                  <span>May 3-4, 2019 | Seattle University</span>
+                  <a class="btn btn-secondary">Get Your Tickets</a>
+
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="container" id="about">
+          <h2>About</h2>
+      </section>
+      <section class="container" id="program">
+          <h2>Program</h2>
+          <h3>Tracks</h3>
+          <h3>Sessions</h3>
+          <h3>Speakers</h3>
 
       </section>
-      <section class="container"></section>
+      <section class="container" id="tickets">
+          <h2>Get Your Tickets</h2>
+      </section>
+      <section class="container" id="location">
+          <h2>Location</h2>
+      </section>
+      <section class="container" id="extras">
+          <h2>Extras</h2>
+      </section>
+      <section class="container">
+          <h2>Sponsors</h2>
+      </section>
   </main>
-  <a href="#">link</a>
+  <footer>
+      <script type="text/javascript" src="js/main.js"></script>
+  </footer>
 </body>
 </html>

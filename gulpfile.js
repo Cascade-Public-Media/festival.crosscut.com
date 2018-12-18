@@ -11,6 +11,8 @@ const imagemin = require('gulp-imagemin');
 sass.compiler = require('node-sass');
 
 const paths = {
+  src: './src',
+  dist: './dist',
   nm: './node_modules',
   styles_src: './src/sass',
   vendor: './src/vendor',
@@ -19,7 +21,7 @@ const paths = {
   scripts_dest: './dist/js',
   image_src: './src/images',
   image_dest: './dist/images'
-}
+};
 
 // BrowserSync Configuration
 const server = browserSync.create();
@@ -32,7 +34,7 @@ function reload(done) {
 function serve(done) {
   server.init({
     server: {
-      baseDir: './'
+      baseDir: './dist'
     }
   });
   done();
@@ -40,6 +42,11 @@ function serve(done) {
 
 function clean() {
   return del(['dist']);
+}
+
+function html() {
+  return gulp.src(paths.src + '/*.html')
+      .pipe( gulp.dest( paths.dist ) );
 }
 
 // compile sass, add vendor prefixes, minify CSS
@@ -54,6 +61,13 @@ function styles() {
     .pipe( rename( { suffix: '.min' } ) )
     .pipe( gulp.dest( paths.styles_dest ) )
     .pipe( server.stream() );
+}
+
+function scripts() {
+  return gulp.src(paths.scripts_src + '/*.js')
+      .pipe( plumber() )
+      .pipe( gulp.dest( paths.scripts_dest ) )
+      .pipe( server.stream() );
 }
 
 // vendor
@@ -73,15 +87,24 @@ gulp.task('vendor:js', function() {
 gulp.task( 'vendor', gulp.parallel( 'vendor:scss', 'vendor:js' ) );
 
 // images
-gulp.task('imagemin', function() {
-  return gulp.src(paths.image_src + '/*')
-    .pipe( imagemin() )
-    .pipe( gulp.dest( paths.image_dest ) );
-});
-
-function watchFiles() {
-  gulp.watch( paths.styles_src + '/**/*.scss', styles );
+function images() {
+    return gulp.src(paths.image_src + '/*')
+        .pipe( imagemin() )
+        .pipe( gulp.dest( paths.image_dest ) );
 }
 
+gulp.task( 'watchAll', function() {
+    gulp.watch( paths.styles_src + '/**/*.scss', styles );
+    gulp.watch( paths.image_src + '/*', images );
+    gulp.watch( paths.src + '/*.html', html);
+    gulp.watch( paths.scripts_src + '/*.js', scripts);
+
+});
+
 // Run `gulp watch` to start watch task
-gulp.task( 'watch', gulp.parallel( watchFiles, serve ) );
+gulp.task( 'watch', gulp.parallel('watchAll', serve));
+
+gulp.task( 'build', gulp.parallel(html, images, styles));
+
+// Initial Build
+gulp.task( 'init', gulp.series( clean, 'vendor', 'build', 'watch'));
