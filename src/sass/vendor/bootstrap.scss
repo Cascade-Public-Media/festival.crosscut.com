@@ -5,38 +5,43 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-// @import "../../vendorStore/scss/bootstrap/functions";
-// @import "../../vendorStore/scss/bootstrap/variables";
-// @import "../../vendorStore/scss/bootstrap/mixins";
-// @import "../../vendorStore/scss/bootstrap/root";
-// @import "../../vendorStore/scss/bootstrap/reboot";
-// @import "../../vendorStore/scss/bootstrap/type";
-// @import "../../vendorStore/scss/bootstrap/images";
-// @import "../../vendorStore/scss/bootstrap/code";
-// @import "../../vendorStore/scss/bootstrap/grid";
-// @import "../../vendorStore/scss/bootstrap/tables";
-// @import "../../vendorStore/scss/bootstrap/forms";
-// @import "../../vendorStore/scss/bootstrap/buttons";
-// @import "../../vendorStore/scss/bootstrap/transitions";
-// @import "../../vendorStore/scss/bootstrap/dropdown";
-// @import "../../vendorStore/scss/bootstrap/button-group";
-// @import "../../vendorStore/scss/bootstrap/input-group";
-// @import "../../vendorStore/scss/bootstrap/custom-forms";
-// @import "../../vendorStore/scss/bootstrap/nav";
-// @import "../../vendorStore/scss/bootstrap/navbar";
-// @import "../../vendorStore/scss/bootstrap/card";
-// @import "../../vendorStore/scss/bootstrap/breadcrumb";
-// @import "../../vendorStore/scss/bootstrap/pagination";
-// @import "../../vendorStore/scss/bootstrap/badge";
-// @import "../../vendorStore/scss/bootstrap/jumbotron";
-// @import "../../vendorStore/scss/bootstrap/alert";
-// @import "../../vendorStore/scss/bootstrap/progress";
-// @import "../../vendorStore/scss/bootstrap/media";
-// @import "../../vendorStore/scss/bootstrap/list-group";
-// @import "../../vendorStore/scss/bootstrap/close";
-// @import "../../vendorStore/scss/bootstrap/modal";
-// @import "../../vendorStore/scss/bootstrap/tooltip";
-// @import "../../vendorStore/scss/bootstrap/popover";
-// @import "../../vendorStore/scss/bootstrap/carousel";
-// @import "../../vendorStore/scss/bootstrap/utilities";
-// @import "../../vendorStore/scss/bootstrap/print";
+
+ @import "../../vendor/scss/bootstrap/functions";
+ @import "../../vendor/scss/bootstrap/variables";
+
+//override default bootstrap variables
+@import "../site/variables";
+
+ @import "../../vendor/scss/bootstrap/mixins";
+ //@import "../../vendor/scss/bootstrap/root";
+// @import "../../vendor/scss/bootstrap/reboot";
+// @import "../../vendor/scss/bootstrap/type";
+// @import "../../vendor/scss/bootstrap/images";
+// @import "../../vendor/scss/bootstrap/code";
+// @import "../../vendor/scss/bootstrap/grid";
+// @import "../../vendor/scss/bootstrap/tables";
+// @import "../../vendor/scss/bootstrap/forms";
+ @import "../../vendor/scss/bootstrap/buttons";
+// @import "../../vendor/scss/bootstrap/transitions";
+// @import "../../vendor/scss/bootstrap/dropdown";
+// @import "../../vendor/scss/bootstrap/button-group";
+// @import "../../vendor/scss/bootstrap/input-group";
+// @import "../../vendor/scss/bootstrap/custom-forms";
+// @import "../../vendor/scss/bootstrap/nav";
+// @import "../../vendor/scss/bootstrap/navbar";
+// @import "../../vendor/scss/bootstrap/card";
+// @import "../../vendor/scss/bootstrap/breadcrumb";
+// @import "../../vendor/scss/bootstrap/pagination";
+// @import "../../vendor/scss/bootstrap/badge";
+// @import "../../vendor/scss/bootstrap/jumbotron";
+// @import "../../vendor/scss/bootstrap/alert";
+// @import "../../vendor/scss/bootstrap/progress";
+// @import "../../vendor/scss/bootstrap/media";
+// @import "../../vendor/scss/bootstrap/list-group";
+// @import "../../vendor/scss/bootstrap/close";
+// @import "../../vendor/scss/bootstrap/modal";
+// @import "../../vendor/scss/bootstrap/tooltip";
+// @import "../../vendor/scss/bootstrap/popover";
+// @import "../../vendor/scss/bootstrap/carousel";
+// @import "../../vendor/scss/bootstrap/utilities";
+// @import "../../vendor/scss/bootstrap/print";

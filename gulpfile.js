@@ -10,12 +10,17 @@ const browserSync = require('browser-sync');
 const imagemin = require('gulp-imagemin');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const render = require('gulp-nunjucks-render');
+const data = require('gulp-data');
 sass.compiler = require('node-sass');
 
 const paths = {
   src: './src',
   dist: './dist',
   nm: './node_modules',
+  data: './src/nunjucks',
+  templates: './src/templates',
+  pages: './src/pages',
   styles_src: './src/sass',
   vendorStore: './src/vendor',
   styles_dest: './dist/css',
@@ -41,10 +46,36 @@ function clean() {
   return del(['dist']);
 }
 
+// HTML: compile nunjucks templates
+gulp.task('nunjucks', function() {
+    return gulp.src('src/pages/**/*.html')
+        .pipe(data( function() {
+            return require('./src/nunjucks/data.json')
+        }))
+        .pipe(render({
+            path: ['src/templates']
+        }))
+        .pipe(gulp.dest( paths.dist ))
+        .pipe( server.stream() );
+});
+
+function nunjucks() {
+    return gulp.src( paths.pages + '/**/*.html' )
+        .pipe(data( function() {
+            return require( paths.data + '/data.json' )
+        }))
+        .pipe(render({
+            path: [ paths.templates ]
+        }))
+        .pipe(gulp.dest( paths.dist ))
+        .pipe( server.stream() );
+};
+
 // HTML: copy to dest
 function html() {
   return gulp.src(paths.src + '/*.html')
-      .pipe( gulp.dest( paths.dist ) );
+      .pipe( gulp.dest( paths.dist ) )
+      .pipe( server.stream() );
 }
 
 // Styles: compile sass, add vendor prefixes, minify CSS
@@ -65,7 +96,8 @@ function styles() {
 function images() {
     return gulp.src(paths.image_src + '/*')
         .pipe( imagemin() )
-        .pipe( gulp.dest( paths.image_dest ) );
+        .pipe( gulp.dest( paths.image_dest ) )
+        .pipe( server.stream() );
 }
 
 // Scripts: minify
@@ -80,9 +112,18 @@ function scripts() {
 
 // Set up vendorStore
 // Copy vendor styles from node_modules to vendorStore
-gulp.task('vendorStore:scss', function() {
-  return gulp.src([paths.nm + '/bootstrap/scss/**/*'])
+gulp.task('vendorStore:bootstrapSass', function() {
+  return gulp.src([
+      paths.nm + '/bootstrap/scss/**/*',
+  ])
     .pipe( gulp.dest( paths.vendorStore + '/scss/bootstrap' ) );
+});
+
+gulp.task('vendorStore:owlSass', function() {
+    return gulp.src([
+        paths.nm + '/owl.carousel/src/scss/*',
+    ])
+        .pipe( gulp.dest( paths.vendorStore + '/scss/owl' ) );
 });
 
 // Copy vendor scripts from node_modules to vendorStore
@@ -109,12 +150,12 @@ gulp.task('vendorScripts', function () {
 });
 
 // Set up vendorStore, prepare vendor scripts
-gulp.task( 'vendor', gulp.series( gulp.parallel( 'vendorStore:scss', 'vendorStore:js' ), 'vendorScripts') );
+gulp.task( 'vendor', gulp.series( gulp.parallel( 'vendorStore:bootstrapSass', 'vendorStore:owlSass', 'vendorStore:js' ), 'vendorScripts') );
 
 gulp.task( 'watchAll', function() {
     gulp.watch( paths.styles_src + '/**/*.scss', styles );
     gulp.watch( paths.image_src + '/*', images );
-    gulp.watch( paths.src + '/*.html', html);
+    gulp.watch( paths.src + '/**/*.html', nunjucks);
     gulp.watch( paths.scripts_src + '/**/*.js', scripts);
 
 });
@@ -122,7 +163,7 @@ gulp.task( 'watchAll', function() {
 // Run `gulp watch` to start watch task
 gulp.task( 'watch', gulp.parallel('watchAll', serve));
 
-gulp.task( 'build', gulp.parallel(html, images, styles, scripts));
+gulp.task( 'build', gulp.parallel(nunjucks, images, styles, scripts));
 
 // Initial Build
 gulp.task( 'init', gulp.series( clean, 'vendor', 'build', 'watch'));

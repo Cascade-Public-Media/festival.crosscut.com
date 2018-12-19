@@ -1,3 +1,8 @@
+* {
+  font-family: $font-family-sans-serif;
+  color: $black;
+}
+
 .visually-hidden {
   @include sr-only;
 }
@@ -8,30 +13,56 @@ img {
   height: auto;
 }
 
+.btn-secondary {
+  background-color: $yellow;
+  color: $blue-dark;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $yellow-darker;
+    color: $blue-dark;
+    border: none;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
+td {
+  border-left: 1px solid $border-color;
+  padding: 10px 20px;
+}
+
+th {
+  padding: 10px 20px;
+  vertical-align: bottom;
+}
+
+td {
+  text-align: center;
+}
+
+tr:nth-child(even) {
+  td, th {
+    background-color: #E9F6FD;
+  }
+}
+
+tr:nth-child(odd) {
+  td, th {
+    background-color: #fff;
+  }
+}
+
+caption {
+  padding: 10px;
+}
+
 .main-header {
   background-color: $blue;
-}
-
-.parallax {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
-.hero {
-  background: linear-gradient(90deg, rgba(23,44,59,0) 20%, #000000 120%), url('../images/ccfest_hero.jpg');
-  background-size: cover;
-  background-position: top center;
-  height: 90vh;
-
-  .container {
-    .hero-contents {
-      float: right;
-      color: #fff;
-    }
-  }
 }
 
 .nav {
@@ -51,3 +82,140 @@ img {
     }
   }
 }
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.hero {
+  background: linear-gradient(90deg, rgba(23,44,59,0) 20%, #000000 120%), url('../images/ccfest_hero.jpg');
+  background-size: cover;
+  background-position: top center;
+  height: 90vh;
+  min-height: 700px;
+
+  .container {
+    .hero-contents {
+      float: right;
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.section {
+  padding: 4em 0;
+}
+
+.featured-org-carousel {
+  background-color: #bebebe;
+  height: 120px;
+
+}
+
+// Owl Carousel
+.owl-dot,
+.owl-dot.active {
+  position: absolute;
+
+  span {
+    background: transparent !important;
+
+    border-top:10px solid transparent;
+    border-bottom:10px solid transparent;
+    display:inline-block;
+    width:0;
+    height:0;
+  }
+
+  &:first-of-type {
+    left: -1em;
+
+    span {
+      background: transparent;
+      border-right:10px solid #fff;
+    }
+    &.active,
+    &:hover,
+    &:focus {
+      span {
+        background: transparent;
+        border-right: 10px solid $gray-600;
+      }
+    }
+  }
+  &:last-of-type {
+    right: 1em;
+
+    span {
+      background: transparent;
+      border-left:10px solid #fff;
+
+    }
+    &.active,
+    &:hover,
+    &:focus {
+      span {
+        background: transparent;
+        border-left: 10px solid $gray-600;
+      }
+    }
+  }
+}
+
+.ticket-table {
+
+  .ticket-option {
+    height:140px;
+    white-space: nowrap;
+
+    div {
+      transform: translate(0, 14px)
+        rotate(270deg);
+    }
+  }
+
+  tr {
+    th:first-of-type {
+      max-width: 200px;
+      padding: 10px 20px;
+    }
+
+    th {
+      span {
+        font-size: .8em;
+        font-weight: 300;
+      }
+    }
+
+    th, td {
+      max-width: 70px;
+      padding: 10px 16px;
+    }
+
+    &:first-of-type {
+      th {
+        font-size: 1.1em;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .ticket-option {
+      height: auto;
+      white-space: normal;
+
+      div {
+        transform: translate(0,0)
+          rotate(0deg);
+      }
+    }
+  };
+}
+
