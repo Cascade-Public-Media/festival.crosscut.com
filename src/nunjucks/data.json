@@ -1,5 +1,34 @@
 {
   "site": {
     "title": "Crosscut Festival 2019"
-  }
+  },
+  "sessions": [
+    {
+      "image":"https://placeimg.com/255/300/any",
+      "datetime": "Friday, May 3rd at 7PM",
+      "track": "Track Name",
+      "venue": "Venue Name",
+      "name" : "Session 1 Name Goes Here: Insightful Question?",
+      "speaker": "Speaker Name",
+      "speaker_info": "Speaker Qualifications and/or Affiliations"
+    },
+    {
+      "image":"https://placeimg.com/255/300/any",
+      "datetime": "Friday, May 3rd at 7PM",
+      "track": "Track Name",
+      "venue": "Venue Name",
+      "name" : "Session 2 Name Goes Here: Insightful Question?",
+      "speaker": "Speaker Name",
+      "speaker_info": "Speaker Qualifications and/or Affiliations"
+    },
+    {
+      "image":"https://placeimg.com/255/300/any",
+      "datetime": "Friday, May 3rd at 7PM",
+      "track": "Track Name",
+      "venue": "Venue Name",
+      "name" : "Session 3 Name Goes Here: Insightful Question?",
+      "speaker": "Speaker Name",
+      "speaker_info": "Speaker Qualifications and/or Affiliations"
+    }
+  ]
 }

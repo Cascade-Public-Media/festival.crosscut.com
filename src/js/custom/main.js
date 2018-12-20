@@ -24,23 +24,43 @@ $(document).ready(function() {
         loop: true,
         center: true,
         items: 1,
-        margin: 10,
         nav:true,
+        margin: 10,
+        responsiveClass: true,
         responsive: {
-            0:{
-                stagePadding: 30
+            0: {
+                stagePadding: 70
             },
-            768:{
+            450: {
                 stagePadding: 110
             },
-            900:{
+            576: {
+                stagePadding: 100
+            },
+            768: {
+                stagePadding: 110
+            },
+            900: {
                 stagePadding: 170
             },
-            1024:{
-                stagePadding: 200
+            1024: {
+                stagePadding: 280,
+                margin: 40
             },
-            1400:{
-                stagePadding: 400
+            1250: {
+                items: 2,
+                stagePadding: 50,
+                margin: 40
+            },
+            1500: {
+                items: 2,
+                stagePadding: 100,
+                margin: 40
+            },
+            1700: {
+                items:3,
+                stagePadding: 20,
+                margin:40
             }
         }
     })

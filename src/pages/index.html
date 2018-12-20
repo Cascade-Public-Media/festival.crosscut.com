@@ -47,72 +47,10 @@
             <p>Crosscut Festival programming explores the fabric of our cultural conversation across a wide range of subjects. Sessions will include programming in tracks including Keynote, Race & Social Justice, Politics, Business, Science & the Environment, Interactive Workshops, and Meetups. We’ll also have live music, food, drinks and social events.</p>
         </section>
     </section>
-    <section class="container-fluid section">
-        <section class="subsection">
-            <h3 class="section-header">Sessions</h3>
-            <div id="session-carousel" class="owl-carousel owl-theme">
-                <div class="session">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="session__image"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="session__info__top">
-                                <div class="vertical-line"></div>
-                                <div>
-                                    <span>Friday, May 3 7PM</span><br>
-                                    <span>Track Name</span><br>
-                                    <span>Venue Name</span>
-                                </div>
-                            </div>
-                            <div class="session__info__middle">
-                                <h4>Session Name Goes Here: Insightful Question?</h4>
-                            </div>
-                            <div class="session__info__middle">
-                                <span>Speaker Name</span><br>
-                                <span>Speaker Qualifications and/or Affiliations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="session">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="session__image"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="session__info__top">
-                                <div class="vertical-line"></div>
-                                <div>
-                                    <span>Friday, May 3 7PM</span><br>
-                                    <span>Track Name</span><br>
-                                    <span>Venue Name</span>
-                                </div>
-                            </div>
-                            <div class="session__info__middle">
-                                <h4>Session Name Goes Here: Insightful Question?</h4>
-                            </div>
-                            <div class="session__info__middle">
-                                <span>Speaker Name</span><br>
-                                <span>Speaker Qualifications and/or Affiliations</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="session">
 
-                </div>
-                <div class="session">
-
-                </div>
-
-            </div>
-        </section>
-        <section class="subsection">
-            <h3 class="section-header">Speakers</h3>
-        </section>
-
-    </section>
+    {% if sessions %}
+        {% include "_sessions.html" %}
+    {% endif %}
 
     <section class="container section" id="tickets">
         <h2 class="section-header">Get Your Tickets</h2>

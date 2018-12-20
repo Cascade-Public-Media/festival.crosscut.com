@@ -1,0 +1,36 @@
+<section class="container-fluid section">
+    <section class="subsection">
+        <h3 class="section-header">Sessions</h3>
+        <div id="session-carousel" class="owl-carousel owl-theme">
+            {% for session in sessions %}
+            <div class="session">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="session__image"><img src="{{ session.image }}"></div>
+                    </div>
+                    <div class="col-sm-6 session__info">
+                        <div class="session__info__top">
+                            <div class="vertical-line"></div>
+                            <div>
+                                <span>{{ session.datetime }}</span><br>
+                                <span>{{ session.track }}</span><br>
+                                <span>{{ session.venue }}</span>
+                            </div>
+                        </div>
+                        <div class="session__info__middle">
+                            <h4>{{ session.name }}</h4>
+                        </div>
+                        <div class="session__info__middle">
+                            <span class="font-weight-bold">{{ session.speaker }}</span><br>
+                            <span>{{ session.speaker_info}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <section class="subsection">
+        <h3 class="section-header">Speakers</h3>
+    </section>
+</section>

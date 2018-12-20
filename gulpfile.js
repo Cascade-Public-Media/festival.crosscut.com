@@ -59,6 +59,7 @@ gulp.task('nunjucks', function() {
         .pipe( server.stream() );
 });
 
+// HTML: compile templates
 function nunjucks() {
     return gulp.src( paths.pages + '/**/*.html' )
         .pipe(data( function() {
@@ -69,13 +70,6 @@ function nunjucks() {
         }))
         .pipe(gulp.dest( paths.dist ))
         .pipe( server.stream() );
-};
-
-// HTML: copy to dest
-function html() {
-  return gulp.src(paths.src + '/*.html')
-      .pipe( gulp.dest( paths.dist ) )
-      .pipe( server.stream() );
 }
 
 // Styles: compile sass, add vendor prefixes, minify CSS
@@ -155,6 +149,7 @@ gulp.task( 'vendor', gulp.series( gulp.parallel( 'vendorStore:bootstrapSass', 'v
 gulp.task( 'watchAll', function() {
     gulp.watch( paths.styles_src + '/**/*.scss', styles );
     gulp.watch( paths.image_src + '/*', images );
+    gulp.watch( paths.data + '/*.json', nunjucks);
     gulp.watch( paths.src + '/**/*.html', nunjucks);
     gulp.watch( paths.scripts_src + '/**/*.js', scripts);
 
