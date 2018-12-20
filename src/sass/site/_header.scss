@@ -1,0 +1,61 @@
+.main-header {
+  background-color: $blue;
+  position:fixed;
+  width:100%;
+  z-index: $zindex-fixed;
+  top: 0;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items:center;
+
+  .menu {
+
+    &__primary{
+      height: $header-height;
+      text-transform:uppercase;
+      position: relative;
+
+      ul {
+        display: inline;
+        margin: 0;
+        padding: 0;
+
+        > li {
+          display: inline-flex;
+          padding-left: 1em;
+          height: 100%;
+          align-items:center;
+        }
+      }
+    }
+    &__secondary{
+      display:none;
+
+      ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+
+        > li {
+          display: block;
+          padding-left: 0;
+        }
+      }
+
+    }
+  }
+
+  .nav-link {
+    color: $white;
+    display:inline-block;
+    font-weight: $font-weight-bold;
+
+    &.active {
+      color: $secondary;
+    }
+  }
+}

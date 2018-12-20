@@ -4,10 +4,15 @@ $blue: #213342;
 $blue-dark: #172C3B;
 $yellow: #F2BF42;
 $yellow-darker: #E5B02E;
+$orange: #F27A4A;
 $teal: #61C2D7;
 $teal-darker: #54B9CE;
 $gray-medium: #979797;
-$black: #4A4A4A;
+$gray-dark: #4A4A4A;
+
+$highlight-bg: #FFEAB8;
+
+$header-height: 90px;
 
 
 
@@ -18,5 +23,7 @@ $secondary: $yellow;
 $enable-rounded: false;
 
 $font-family-sans-serif: 'ProximaNova', sans-serif;
+$font-family-serif: 'Lora', serif;
 
 $border-color: $gray-medium;
+$link-color: #2D68AE;
