@@ -76,6 +76,10 @@ caption {
   line-height:0;
 }
 
+.vertical-line {
+  border-left: 1px solid $gray-medium;
+}
+
 /** Typography **/
 p,
 span,
@@ -158,7 +162,7 @@ h3.section-header {
   }
 
   .standout-copy {
-    font-size: 1.38rem;
+    font-size: 1.28rem;
   }
 
   h1.section-header {

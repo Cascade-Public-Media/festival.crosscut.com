@@ -1,8 +1,16 @@
 $(document).ready(function() {
-    console.log('working');
 
-    $('#panelists-carousel').owlCarousel();
+    var development = true;
+    var domain;
 
+    if (development) {
+        domain = 'https://crosscut.dev.dd:8443';
+    } else {
+        domain = 'https://crosscut.com';
+    }
+
+
+    // Smooth Scroll
     $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
 
@@ -17,6 +25,47 @@ $(document).ready(function() {
 
         $('a.nav-link[href^="#"]').removeClass('active');
         $(this).addClass('active');
+    });
+
+
+    // News section: get data from festival news REST export view on crosscut.com
+    function renderNews(data) {
+        var image_path = domain + data['image'];
+        var date = data['created'].slice(0, -8); // remove time from long format date
+
+        var html = '<article id="festival-news" class="news"><h3 class="section-header text-left d-inline-block">In the News</h3><a class="view-all pl-3" href="https://crosscut.com/crosscut-festival/">View All<div class="inline-arrow-right"></div></a><div class="row no-gutters"><div class="col-sm-6 col-md-3"><div class="img-container"><img class="newsImage" alt="Crosscut Festival News Article" src="' + image_path + '"/></div></div><span class="col-sm-6 col-md-9 article-teaser"><h4>' + data['title'] + '</h4><p>' + data['excerpt'] + '</p><span class="byline">by ' + data['author'] + ' / ' + date + '</span></div></div></article>';
+        console.log(html);
+        $('.news-container').append(html);
+    }
+
+    var url = domain + '/json/festival-news?_format=json';
+
+    $.ajax({
+        url: url,
+        method: 'GET',
+        crossDomain: true,
+        success: function(response) {
+            renderNews(response[0]);
+        }
+    });
+
+
+    // Initialize Carousels
+    $('#panelists-carousel').owlCarousel({
+        loop: true,
+        dots: true,
+        margin: 5,
+        responsive: {
+            0: {
+                items: 2
+            },
+            576: {
+                items: 3
+            },
+            768: {
+                items: 4
+            }
+        }
     });
 
     $('#session-carousel').owlCarousel({
@@ -63,5 +112,5 @@ $(document).ready(function() {
                 margin:40
             }
         }
-    })
+    });
 });

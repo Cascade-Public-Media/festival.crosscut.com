@@ -20,4 +20,5 @@ Getting Started:
 Developing with BrowserSync:
 
 - Run `gulp watch`. This starts a local mini-server, provides a URL to view the site (http://localhost:3000), and will open the URL in a browser automatically. BrowserSync reloads the page automatically when changes are saved.
- 
+
+- Templates: Uses [Nunjucks](https://mozilla.github.io/nunjucks/) templating engine. Individual pages can be found in `./src/pages`. Partials and base template files can be found in `./src/templates`. Variables are stored as JSON in `./src/data`.

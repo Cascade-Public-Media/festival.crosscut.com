@@ -36,7 +36,8 @@ const server = browserSync.create();
 function serve(done) {
   server.init({
     server: {
-      baseDir: './dist'
+      baseDir: './dist',
+      https: true
     }
   });
   done();

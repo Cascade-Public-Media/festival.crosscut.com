@@ -1,4 +1,4 @@
-<section class="container-fluid section">
+<section class="container-fluid section" id="sessions">
     <section class="subsection">
         <h3 class="section-header">Sessions</h3>
         <div id="session-carousel" class="owl-carousel owl-theme">
@@ -10,8 +10,7 @@
                     </div>
                     <div class="col-sm-6 session__info">
                         <div class="session__info__top">
-                            <div class="vertical-line"></div>
-                            <div>
+                            <div class="vertical-line">
                                 <span>{{ session.datetime }}</span><br>
                                 <span>{{ session.track }}</span><br>
                                 <span>{{ session.venue }}</span>
@@ -29,8 +28,5 @@
             </div>
             {% endfor %}
         </div>
-    </section>
-    <section class="subsection">
-        <h3 class="section-header">Speakers</h3>
     </section>
 </section>

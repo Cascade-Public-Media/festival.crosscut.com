@@ -17,26 +17,28 @@
             <br/>
             <span class="hero-text">May 3-4, 2019 | Seattle University</span>
             <br/>
-            <a class="btn btn-secondary">Get Your Tickets&nbsp;<div class="inline-arrow-right"></div></a>
+            <a class="btn btn-secondary" href="https://www.eventbrite.com/e/crosscut-festival-tickets-44569953932?aff=Microsite">Get Your Tickets&nbsp;<div class="inline-arrow-right"></div></a>
         </div>
     </section>
     <section class="container-fluid featured-org-carousel">
-        <div class="container"><span class="feature-text">Featuring Panelists From:</span></div>
+        <span class="feature-text">Featuring Panelists From:</span>
         <div id="panelists-carousel" class="container owl-carousel owl-theme">
-            <div>one</div>
-            <div>two</div>
-            <div>three</div>
-            <div>four</div>
-            <div>five</div>
-            <div>six</div>
-            <div>seven</div>
+
+            {% if panelists %}
+            {% for panelist in panelists %}
+            <div><div class="org"><img src="{{ panelist.image }}" alt="{{ panelist.alt }}"/></div></div>
+            {% endfor %}
+            {% endif %}
         </div>
     </section>
     <section class="container section" id="about">
-        <h1 class="section-header">About the Crosscut Festival</h1>
-        <p class="standout-copy">Crosscut presents two days of thought-provoking conversations and innovative thinking, tackling the most important issues of our times. Journalists, politicians, authors, and newsmakers from our community and around the nation come together to take a hard look at the people, policy and events that shape our lives.</p>
+        <h2 class="section-header">About the Crosscut Festival</h2>
+        <p class="standout-copy"><b>Crosscut presents</b> two days of thought-provoking conversations and innovative thinking, tackling the most important issues of our times. Journalists, politicians, authors, and newsmakers from our community and around the nation come together to take a hard look at the people, policy and events that shape our lives.</p>
+
+        <div class="news-container">
+        </div>
     </section>
-    <section class="container section" id="program">
+    <section class="container section">
         <h2 class="section-header">Program</h2>
 
         <div class="highlight"><div>Browse the entire schedule on <a href="https://sched.com">Sched.com</a> or in the event app (coming soon)</div></div>
@@ -52,10 +54,16 @@
         {% include "_sessions.html" %}
     {% endif %}
 
+    <section class="container section" id="speakers">
+        <section class="subsection">
+            <h3 class="section-header">Speakers</h3>
+        </section>
+    </section>
+
     <section class="container section" id="tickets">
         <h2 class="section-header">Get Your Tickets</h2>
         <a href="#" class="btn btn-secondary">Get Your Tickets&nbsp;<div class="inline-arrow-right"></div></a>
-        <p class="info-text">Early bird prices end on DATE.</p>
+        <p class="info-text d-inline pl-3">Early bird prices end on DATE.</p>
 
         <table class="ticket-table" style="width:100%;">
             <tbody>

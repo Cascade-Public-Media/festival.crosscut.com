@@ -16,7 +16,6 @@
 
     &__primary{
       height: $header-height;
-      text-transform:uppercase;
       position: relative;
 
       ul {
@@ -57,5 +56,23 @@
     &.active {
       color: $secondary;
     }
+  }
+
+  .vertical-line {
+    display: inline-flex;
+    height: 45px;
+    margin: 0 1em;
+    padding: 18px 0
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    background-image: url('/images/menu_dots_white.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 40px;
+    padding: 15px 0;
   }
 }

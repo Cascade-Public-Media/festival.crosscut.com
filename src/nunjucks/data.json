@@ -2,6 +2,24 @@
   "site": {
     "title": "Crosscut Festival 2019"
   },
+  "panelists": [
+    {
+      "image": "./images/Crosscut_logo2019_ko.svg",
+      "alt": "Crosscut"
+    },
+    {
+      "image": "./images/Crosscut_logo2019_ko.svg",
+      "alt": "Crosscut"
+    },
+    {
+      "image": "./images/Crosscut_logo2019_ko.svg",
+      "alt": "Crosscut"
+    },
+    {
+      "image": "./images/Crosscut_logo2019_ko.svg",
+      "alt": "Crosscut"
+    }
+  ],
   "sessions": [
     {
       "image":"https://placeimg.com/255/300/any",
@@ -18,6 +36,15 @@
       "track": "Track Name",
       "venue": "Venue Name",
       "name" : "Session 2 Name Goes Here: Insightful Question?",
+      "speaker": "Speaker Name",
+      "speaker_info": "Speaker Qualifications and/or Affiliations"
+    },
+    {
+      "image":"https://placeimg.com/255/300/any",
+      "datetime": "Friday, May 3rd at 7PM",
+      "track": "Track Name",
+      "venue": "Venue Name",
+      "name" : "Session 3 Name Goes Here: Insightful Question?",
       "speaker": "Speaker Name",
       "speaker_info": "Speaker Qualifications and/or Affiliations"
     },
