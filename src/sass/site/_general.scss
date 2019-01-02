@@ -15,37 +15,6 @@ img {
   height: auto;
 }
 
-table {
-  border-collapse: collapse;
-  font-size: 1rem;
-}
-
-td {
-  border-left: 1px solid $border-color;
-  padding: 10px 20px;
-}
-
-th {
-  padding: 10px 20px;
-  vertical-align: bottom;
-}
-
-td {
-  text-align: center;
-}
-
-tr:nth-child(even) {
-  td, th {
-    background-color: #E9F6FD;
-  }
-}
-
-tr:nth-child(odd) {
-  td, th {
-    background-color: #fff;
-  }
-}
-
 caption {
   padding: 10px;
 }
@@ -241,6 +210,11 @@ h3.section-header {
     right: 10%;
     top: 50%;
     transform: translateY(-50%);
+  }
+
+  .section {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

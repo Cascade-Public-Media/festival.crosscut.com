@@ -218,55 +218,161 @@
 
 
 /** Pricing Table **/
+
+table {
+  border-collapse: collapse;
+  font-size: 1rem;
+}
+
 .ticket-table {
-  display:none;
+
+  &__mobile {
+    margin: 40px 1em;
+
+    .ticket-option {
+      padding: 20px;
+
+      &:nth-child(odd) {
+        background-color: $table-bg;
+      }
+    }
+  }
+
+  &__tablet {
+    display: none;
+
+    .ticket-option {
+      height:130px;
+      padding: 10px;
+    }
+  }
+
+  .check {
+    height: 29px;
+    width: 13px;
+    color: $gray-dark;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 29px;
+  }
+
+  .price-label {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 
   .ticket-option {
-    height:140px;
-    white-space: nowrap;
+    position: relative;
 
-    div {
-      transform: translate(0, 14px)
-      rotate(270deg);
+    .rotate-text {
+      transform: translate(0, -14px) rotate(90deg);
+      position: relative;
+      height: 100%;
+      width: 100%;
+      text-align: left;
+      display: flex;
+
+      span {
+        font-size: 22px;
+        line-height: 26px;
+        font-weight: bold;
+        display: block;
+        padding: 0;
+        margin: auto auto;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+  }
+
+  .price {
+    text-align: left;
+
+    span {
+      font-size: 14px;
+      line-height: 15px;
+      font-weight: bold;
     }
   }
 
   tr {
-    th:first-of-type {
-      max-width: 200px;
-      padding: 10px 20px;
+    &:nth-child(even) {
+      td, th {
+        background-color: $white;
+      }
     }
 
-    th {
-      span {
-        font-size: .8em;
-        font-weight: 300;
+    &:nth-child(odd):not(:first-child) {
+      td, th {
+        background-color: $table-bg;
       }
+    }
+
+    th:first-of-type {
+      max-width: 127px;
+      padding: 10px 16px;
+      border-left: none;
+      font-size: 18px;
+      vertical-align: bottom;
     }
 
     th, td {
       max-width: 70px;
-      padding: 10px 16px;
+      border-left: 1px solid $border-color;
     }
 
-    &:first-of-type {
-      th {
-        font-size: 1.1em;
-      }
+    td {
+      padding: 10px 16px;
+      text-align: center;
     }
   }
 
   @include media-breakpoint-up(md) {
-    .ticket-option {
-      height: auto;
-      white-space: normal;
 
-      div {
-        transform: translate(0,0)
-        rotate(0deg);
+    &__tablet {
+      display: table;
+    }
+
+    &__mobile {
+      display: none;
+    }
+
+  }
+
+  @include media-breakpoint-up(lg) {
+
+    .price-label {
+      display: none;
+    }
+
+    .ticket-option {
+      height: 70px;
+      padding-bottom: 0;
+
+      .rotate-text {
+        transform: translate(0, 0) rotate(0deg);
+
+        span {
+          font-size: 20px;
+          position: relative;
+          transform: translateY(0);
+          top: 0;
+        }
+      }
+
+    }
+
+    .price {
+      padding-top: 0;
+
+      span {
+        font-weight: normal;
       }
     }
-  };
+
+  }
 }
 
 .extras {
