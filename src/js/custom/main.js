@@ -9,6 +9,18 @@ $(document).ready(function() {
         domain = 'https://crosscut.com';
     }
 
+    $dropdownMenu = $('.nav-dropdown');
+    // Navigation
+    $('#toggle').on('click', function() {
+       if ( $dropdownMenu.hasClass('active') ) {
+           $dropdownMenu.removeClass('active');
+           $(this).attr('aria-pressed', 'true').removeClass('active');
+       } else {
+           $dropdownMenu.addClass('active');
+           $(this).attr('aria-pressed', 'false').addClass('active');
+       }
+    });
+
 
     // Smooth Scroll
     $('a[href^="#"]').on('click', function(e) {

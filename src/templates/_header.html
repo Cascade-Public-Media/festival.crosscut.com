@@ -1,6 +1,6 @@
 <header class="main-header">
-    <nav>
-        <div class="nav">
+    <div class="nav-container">
+        <nav class="nav nav-primary">
             <div class="logo"><a href="/" title="Home"><img src="images/speech_bubbles.png" alt="Crosscut Festival 2019" height="40" width="40"/></a></div>
             <div class="menu menu__primary">
                 <ul>
@@ -10,19 +10,29 @@
                     <li><a class="nav-link" href="#tickets">Tickets</a></li>
                     <li><a class="nav-link" href="#location">Location</a></li>
                     <li><a class="nav-link" href="#extras">Extras</a></li>
-                    <li><a class="btn btn-secondary text-uppercase" href="https://www.eventbrite.com/e/crosscut-festival-tickets-44569953932?aff=Microsite">Buy Now</a></li>
                 </ul>
+                <a class="btn btn-secondary header-cta" href="https://www.eventbrite.com/e/crosscut-festival-tickets-44569953932?aff=Microsite">Buy Now</a>
                 <div class="vertical-line"></div>
-                <div role="button" class="menu-toggle" id="toggle"></div>
+                <div role="button" class="menu-toggle" id="toggle" tabindex="0" aria-pressed="false"><span class="visually-hidden">Menu</span></div>
             </div>
-            <div class="menu menu__secondary">
-                <ul>
-                    <li><a class="nav-link" href="#">Sponsor</a></li>
-                    <li><a class="nav-link" href="#">Volunteer</a></li>
-                    <li><a class="nav-link" href="#">News</a></li>
-                    <li><a class="nav-link" href="#">FAQ</a></li>
-                </ul>
-            </div>
-        </div>
+        </nav>
+
+    <nav class="nav-dropdown">
+        <ul id="menu-primary" class="primary">
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#sessions">Sessions</a></li>
+            <li><a class="nav-link" href="#speakers">Speakers</a></li>
+            <li><a class="nav-link" href="#tickets">Tickets</a></li>
+            <li><a class="nav-link" href="#location">Location</a></li>
+            <li><a class="nav-link" href="#extras">Extras</a></li>
+        </ul>
+        <ul id="menu-secondary" class="secondary">
+            <li><a class="nav-link" href="#">Sponsor</a></li>
+            <li><a class="nav-link" href="#">Call For Entries</a></li>
+            <li><a class="nav-link" href="#">Volunteer</a></li>
+            <li><a class="nav-link" href="#">News</a></li>
+            <li><a class="nav-link" href="#">FAQ</a></li>
+        </ul>
     </nav>
+    </div>
 </header>
