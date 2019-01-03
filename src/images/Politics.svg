@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="104px" height="108px" viewBox="0 0 104 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>E79CD032-A9F0-4B6A-BBF6-1A4DEADD83C3</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0.0888957513 56.1184069 0.0888957513 56.1184069 7.6383056 0 7.6383056"></polygon>
+        <polygon id="path-3" points="0 55.9321228 56.1184615 55.9321228 56.1184615 0 0 0"></polygon>
+    </defs>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home" transform="translate(-982.000000, -2488.000000)">
+            <g id="Sessions" transform="translate(-90.000000, 2128.000000)">
+                <g id="Politics">
+                    <g transform="translate(1004.000000, 360.000000)">
+                        <g transform="translate(68.000000, 0.000000)">
+                            <polygon id="Rectangle-15-Copy-2" fill="#2989C9" fill-rule="nonzero" transform="translate(51.961538, 53.663667) scale(-1, 1) translate(-51.961538, -53.663667) " points="0 0 103.923077 0 103.923077 92.9998213 77.074855 92.9998213 77.074855 107.327334 51.9615385 92.9998213 0 92.9998213"></polygon>
+                            <g id="Tracks/Politics" opacity="0.45" transform="translate(24.000000, 17.000000)">
+                                <rect id="Background" x="0" y="0" width="56.1184615" height="56.0145078"></rect>
+                                <g id="Group-12">
+                                    <path d="M2.53509684,15.1451953 C2.53509684,14.3617197 2.50740201,13.6095249 2.55659677,12.8622404 C2.56716453,12.6976523 2.82334166,12.4981461 3.01119275,12.4035762 C6.39050803,10.7042269 9.77656481,9.01851762 13.161164,7.32971658 C17.9527331,4.93855181 22.7461243,2.55102435 27.531863,0.148038342 C27.9066541,-0.040192228 28.1979964,-0.0545595855 28.5818977,0.137672021 C36.6986679,4.20290674 44.8201754,8.25886632 52.951704,12.2946389 C53.4580456,12.5459767 53.652456,12.830414 53.6047189,13.3821933 C53.5551597,13.950886 53.5936045,14.527399 53.5936045,15.1451953 L2.53509684,15.1451953 Z" id="Fill-1" fill="#FFFFFF"></path>
+                                    <g id="Group-5" transform="translate(0.000000, 48.293781)">
+                                        <mask id="mask-2" fill="white">
+                                            <use xlink:href="#path-1"></use>
+                                        </mask>
+                                        <g id="Clip-4"></g>
+                                        <polygon id="Fill-3" fill="#FFFFFF" mask="url(#mask-2)" points="51.0495251 0.0888957513 51.0495251 2.56462788 53.5786821 2.56462788 53.5786821 5.09946622 56.1184069 5.09946622 56.1184069 7.6383056 -5.46608392e-05 7.6383056 -5.46608392e-05 5.14566 2.50286516 5.14566 2.50286516 2.60791181 5.05388653 2.60791181 5.05388653 0.0888957513"></polygon>
+                                    </g>
+                                    <mask id="mask-4" fill="white">
+                                        <use xlink:href="#path-3"></use>
+                                    </mask>
+                                    <g id="Clip-7"></g>
+                                    <polygon id="Fill-6" fill="#FFFFFF" mask="url(#mask-4)" points="20.4256624 45.7182047 25.4775993 45.7182047 25.4775993 22.8633762 20.4256624 22.8633762"></polygon>
+                                    <polygon id="Fill-8" fill="#FFFFFF" mask="url(#mask-4)" points="30.6561672 45.7207508 35.6933458 45.7207508 35.6933458 22.8642855 30.6561672 22.8642855"></polygon>
+                                    <polygon id="Fill-9" fill="#FFFFFF" mask="url(#mask-4)" points="5.11497913 20.2485171 51.0320883 20.2485171 51.0320883 17.7878798 5.11497913 17.7878798"></polygon>
+                                    <polygon id="Fill-10" fill="#FFFFFF" mask="url(#mask-4)" points="10.2295938 45.7216601 15.2476411 45.7216601 15.2476411 22.8562834 10.2295938 22.8562834"></polygon>
+                                    <polygon id="Fill-11" fill="#FFFFFF" mask="url(#mask-4)" points="40.8806594 45.7187503 45.893605 45.7187503 45.893605 22.8559197 40.8806594 22.8559197"></polygon>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
