@@ -20,6 +20,11 @@ caption {
 }
 
 /** Buttons **/
+
+.cta {
+  text-transform: uppercase;
+}
+
 .btn-secondary {
   font-weight: $font-weight-bold;
   background-color: $yellow;
@@ -110,14 +115,18 @@ h3.section-header {
 }
 
 .highlight {
-  width: 100%;
-  text-align: center;
+
+  &__center{
+    width: 100%;
+    text-align: center;
+  }
 
   div {
     background-color: $highlight-bg;
     font-weight: $font-weight-bold;
     text-align: center;
-    padding: .3em .6em;
+    line-height: 1.5;
+    padding: 0 .3em;
     display:inline-block;
   }
 }

@@ -51,67 +51,100 @@
 
         <p>Crosscut Festival programming explores the fabric of our cultural conversation across a wide range of subjects. Sessions will include programming in tracks including Keynote, Race & Social Justice, Politics, Business, Science & the Environment, Interactive Workshops, and Meetups. We’ll also have live music, food, drinks and social events.</p>
 
-        <div class="row sessions">
+        <div class="row tracks">
             <div class="col-sm-6 col-lg-4">
                 <div class="track keynote">
                     <img src="images/Keynote.svg" width="104" height="108"/>
                     <h4>Keynote</h4>
+                    <div class="horizontal-line"></div>
+                    <div class="presented-by keynote">
+                        <span>Presented by</span>
+                        <div><span class="visually-hidden">LOGO</span></div>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="track business">
                     <img src="images/Business.svg" width="104" height="108"/>
                     <h4>Business</h4>
+                    <div class="horizontal-line"></div>
+                    <div class="presented-by business">
+                        <span>Presented by</span>
+                        <div><span class="visually-hidden">LOGO</span></div>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="track politics">
                     <img src="images/Politics.svg" width="104" height="108"/>
                     <h4>Politics</h4>
+                    <div class="horizontal-line"></div>
+                    <div class="presented-by politics">
+                        <span>Presented by</span>
+                        <div><span class="visually-hidden">LOGO</span></div>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="track justice">
                     <img src="images/RaceJustice.svg" width="104" height="108"/>
                     <h4>Race & Social Justice</h4>
+                    <div class="horizontal-line"></div>
+                    <div class="presented-by justice">
+                        <span>Presented by</span>
+                        <div><span class="visually-hidden">LOGO</span></div>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="track science">
                     <img src="images/ScienceEnvironment.svg" width="104" height="108"/>
                     <h4>Science & Environment</h4>
+                    <div class="horizontal-line"></div>
+                    <div class="presented-by science">
+                        <span>Presented by</span>
+                        <div><span class="visually-hidden">LOGO</span></div>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4">
                 <div class="track interactive">
                     <img src="images/InteractiveSocial.svg" width="104" height="108"/>
                     <h4>Interactive & Social</h4>
+                    <div class="horizontal-line"></div>
+                    <div class="presented-by interactive">
+                        <span>Presented by</span>
+                        <div><span class="visually-hidden">LOGO</span></div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="highlight"><div>Browse the entire schedule on <a href="https://sched.com">Sched.com</a> or in the event app (coming soon)</div></div>
+        {% if sessions %}
+        {% include "_sessions.html" %}
+        {% endif %}
 
-        <section class="subsection">
-            <h3 class="section-header">Tracks</h3>
+    <section class="container section">
+        <section class="subsection lineup">
+            <h3 class="section-header">Complete Lineup</h3>
 
-            <p>Crosscut Festival programming explores the fabric of our cultural conversation across a wide range of subjects. Sessions will include programming in tracks including Keynote, Race & Social Justice, Politics, Business, Science & the Environment, Interactive Workshops, and Meetups. We’ll also have live music, food, drinks and social events.</p>
+            <p>View the full list of panels, meetups, and signings at Sched.com. You can also personalize your schedule, connect with other attendees, and see which sessions are attracting the most interest. </p>
+
+            <a href="https://sched.com" title="See Complete Lineup on Sched.com"><img src="images/SchedCTA_desktop_800x170.jpg" alt="Take a closer look! Brose panels, speakers and more on Sched.com" /></a>
         </section>
     </section>
 
-    {% if sessions %}
-        {% include "_sessions.html" %}
-    {% endif %}
+
 
     <section class="container section" id="speakers">
-        <section class="subsection">
-            <h3 class="section-header">Speakers</h3>
-        </section>
+        <h2 class="section-header">Speakers</h2>
+        <p class="text-center">View the <a href="https://sched.com">complete list of speakers</a></p>
     </section>
 
     <section class="container section" id="tickets">
-        <h2 class="section-header">Get Your Tickets</h2>
-        <a href="#" class="btn btn-secondary">Get Your Tickets&nbsp;<div class="inline-arrow-right"></div></a>
+        <h2 class="section-header">Tickets</h2>
+        <a href="#" class="btn btn-secondary cta">Buy Now</a>
         <p class="info-text d-inline pl-3">Early bird prices end on DATE.</p>
 
         <div class="ticket-table ticket-table__mobile">
@@ -264,6 +297,11 @@
     <section class="container-fluid section location" id="location">
         <h2 class="section-header">Location</h2>
         <p class="info-text">Join us on the beautiful Seattle University campus for this year's festival.</p>
+
+        <div class="iframe-wrapper map-wrapper" style="margin:0px;width:100%;padding-bottom:40%;">
+            <iframe src="https://www.google.com/maps/d/embed?mid=1YCYM1bH-I4nXLj1j-lUUxWnWwEbXslW8" style="top: -48px;height: 78%;">
+            </iframe>
+        </div>
     </section>
 
     <section class="container section extras" id="extras">
@@ -272,7 +310,12 @@
             <div class="col-sm-6 extra">
                 <img class="extra__img" alt="" src="https://placeimg.com/640/440/any">
                 <h3 class="section-header">App</h3>
-                <p>Coming Soon</p>
+                <p>The festival app will allow you to track the agenda and speakers, RSVP to workshops, connect with other attendees, map the locations and build your personalized schedule.</p>
+                <div class="app-info row justify-content-between align-items-center">
+                    <div class="col-4 app-icon disabled"><a href="#"><img src="images/apple-store-badge.svg" alt="Download on the App Store"/></a></div>
+                    <div class="col-4 app-icon disabled"><a href="#"><img src="images/google-play-badge.svg" alt="Get it on Google Play"/></a></div>
+                    <div class="highlight col-4"><div class="text-nowrap"> ★ Coming soon!</div></div>
+                </div>
             </div>
             <div class="col-sm-6 extra">
                 <img class="extra__img" alt="" src="https://placeimg.com/640/440/any">
@@ -299,7 +342,7 @@
         <p class="info-text">Crosscut Festival would not be possible without the generous support of our sponsors and partners.</p>
         <h3 class="display">Thank You!</h3>
 
-        <div class="highlight"><div>Interested in supporting this year's festival? <a href="/sponsor">See our sponsorship page.</a></div></div>
+        <div class="highlight highlight__center"><div>Interested in supporting this year's festival? <a href="/sponsor">See our sponsorship page.</a></div></div>
     </section>
 </main>
 
